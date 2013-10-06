@@ -10,3 +10,5 @@ The game ends when one player lands a warrior on the other player's village.
 Dependencies
 ------------
 Takeover runs in Python and requires a reasonably modern version of Pygame.
+
+[PlanetCute art](http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html) by Daniel Cook ([lostgarden.com](http://lostgarden.com)).
