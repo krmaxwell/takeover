@@ -33,3 +33,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# virtual environment
+venv
+
+# vim swap files
+*.swp
