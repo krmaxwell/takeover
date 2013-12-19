@@ -1,6 +1,8 @@
 #!/usr/bin/env python
+import os
 import pygame
 import random
+import sys
 
 from pygame.locals import *
 
@@ -34,6 +36,20 @@ def init_board():
     board[7][6] = BOARD_WARRIOR_2
     board[6][6] = BOARD_WARRIOR_2
     board[6][7] = BOARD_WARRIOR_2
+
+def load_image(name, colorkey=None):
+    fullname = os.path.join('images', name)
+    try:
+        image = pygame.image.load(fullname)
+    except pygame.error, message:
+        print 'Cannot load image:', name
+        raise SystemExit, message
+    image = image.convert()
+    if colorkey is not None:
+        if colorkey is -1:
+            colorkey = image.get_at((0,0))
+        image.set_colorkey(colorkey, RLEACCEL)
+    return image, image.get_rect()
 
 if __name__ == '__main__':
     init_board()
